@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Activity 2 – Structured Literature Summaries</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 750px;
+      margin: 2rem auto;
+      line-height: 1.5;
+    }
+    textarea {
+      width: 100%;
+      height: 380px;
+      padding: 0.8rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+    }
+    button {
+      margin-top: 0.8rem;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      background: #1c4f2b;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #24633a;
+    }
+    a.home {
+      display: block;
+      margin-top: 2rem;
+      color: #1c4f2b;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Activity 2 – Structured Literature Summaries (One-shot)</h1>
+
+  <p>
+    Below is the improved prompt that includes a full <strong>one-shot example</strong> to help the AI
+    understand exactly how to structure your summary.
+    Click the button to copy the prompt to your clipboard.
+    Replace the placeholders with your own text.
+  </p>
+
+  <textarea readonly id="prompt">
+Here is the structured summary format I want you to follow:
+
+- Research Problem:
+- Methods Used:
+- Project Context / Setting:
+- Key Findings:
+- Practical Implications for Construction Management:
+
+------------------------------------------
+ONE-SHOT EXAMPLE (using a published MT study)
+------------------------------------------
+
+Abstract (Example):
+Mass timber construction (MTC) has emerged as a sustainable alternative to conventional 
+building systems due to its low carbon footprint, high structural performance, 
+and alignment with the principles of a circular economy. While the environmental 
+and structural advantages of mass timber (MT) are well-documented, its occupational 
+safety implications remain underexplored. This study examines how construction safety 
+professionals in the United States perceive and experience safety in MT projects, and 
+how these perceptions compare to those in conventional concrete and steel construction. 
+To achieve this objective, the data were collected through a national web-based survey 
+of OSHA-authorized construction safety trainers. Analyses were conducted to explore 
+perceptions of occupational safety in MT projects, to compare safety perceptions 
+between MT and conventional materials, and to identify construction hazards and challenges 
+specific to MT construction. Results show that respondents with MT experience generally 
+perceive MT projects as safer than concrete or steel, whereas those without experience 
+tend to be more neutral. However, even among experienced safety professionals in MT, 
+a gap persists between observed and perceived safety hazards. High rates of near misses 
+and non-fatal injuries further indicate operational strain during MT erection. These 
+findings underscore the need for specialized, data-driven safety training and planning 
+frameworks tailored to MT's distinct workflows. Targeted safety programs can help align 
+perception with reality, thereby improving safety outcomes in this rapidly expanding 
+sustainable construction sector.
+
+Structured Summary (Example):
+
+- Research Problem:
+  Occupational safety risks in mass timber construction are not well understood,
+  especially compared to conventional concrete and steel construction.
+
+- Methods Used:
+  A national web-based survey of OSHA-authorized construction safety trainers;
+  analyses conducted to explore safety perceptions in MT projects, compare MT to
+  conventional materials, and identify hazards and challenges specific to MT.
+
+- Project Context / Setting:
+  Mass timber construction projects in the United States, as perceived by
+  construction safety professionals.
+
+- Key Findings:
+  Respondents with MT experience generally perceive MT projects as safer than
+  concrete or steel, whereas those without MT experience tend to be more neutral.
+  Even among experienced professionals, a gap persists between observed and
+  perceived safety hazards, and high rates of near misses and non-fatal injuries
+  indicate operational strain during MT erection.
+
+- Practical Implications for Construction Management:
+  Specialized, data-driven safety training and planning frameworks tailored to MT's
+  distinct workflows are needed to align safety perceptions with actual hazards and
+  improve safety outcomes in this expanding sustainable construction sector.
+
+------------------------------------------
+APPLY THE SAME STRUCTURE
+------------------------------------------
+
+Using the structure shown above, summarize the following construction management
+article abstract in the same style and format:
+
+<paste abstract here>
+  </textarea>
+
+  <button onclick="navigator.clipboard.writeText(document.getElementById('prompt').value)">
+    Copy Prompt
+  </button>
+
+  <a class="home" href="index.html">← Back to Home</a>
+
+</body>
+</html>
