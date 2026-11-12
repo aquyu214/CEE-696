@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +16,7 @@
       margin-bottom: 0.5rem;
       overflow-y: hidden;
       resize: none;
+      box-sizing: border-box;
     }
     button {
       margin-bottom: 1.5rem;
@@ -38,58 +40,65 @@
   <h1>Demo – Chain-of-Thought (Weekend Trip Planning)</h1>
 
   <p>
-    Below is the scenario for this activity. Read it first, then 
-    copy and run the <strong>Standard Prompt</strong> in a generative AI tool. 
+    Below is the scenario for this activity. Read it first, then
+    copy and run the <strong>Standard Prompt</strong> in a generative AI tool.
     After that, copy and run the <strong>Chain-of-Thought Prompt</strong>.
   </p>
 
   <p>
     <strong>Scenario:</strong><br>
-    You are a CSU student planning a one-day weekend trip in Fort Collins. You don’t have a car, so you will rely on 
-    public transit (Transfort), walking, or biking. You are on a student budget and want a mix of nature, food, and 
-    something fun, starting and ending at the CSU Main Campus.
+    You are a University of Hawaiʻi at Mānoa (UH Mānoa) student
+    planning a one-day weekend trip in Honolulu. You don't have
+    a car, so you will rely on public transportation (TheBus),
+    walking, or biking. You are on a student budget and want
+    a mix of nature, food, and something fun, starting and
+    ending at the UH Mānoa campus.
   </p>
 
   <!-- Standard Prompt -->
   <h2>Standardized Prompt (Zero-Shot)</h2>
-  <textarea readonly id="stdPrompt">
-Plan a one-day weekend trip in Fort Collins.
-  </textarea>
+  <textarea readonly id="stdPrompt">Plan a one-day weekend trip in Honolulu.</textarea>
 
-  <button onclick="navigator.clipboard.writeText(document.getElementById('stdPrompt').value)">
+  <button onclick="copyPrompt('stdPrompt')">
     Copy Standardized Prompt
   </button>
 
   <!-- Chain-of-Thought Prompt -->
   <h2>Chain-of-Thought (CoT) Prompt</h2>
-  <textarea readonly id="cotPrompt">
-Plan a one-day weekend trip in Fort Collins for a college student.
+  <textarea readonly id="cotPrompt">Plan a one-day weekend trip in Honolulu for a college student.
 
-Think step-by-step.
+Think through the planning process step by step.
 
 Assume the student:
 - Does not have a car
-- Starts the trip at CSU Main Campus
-- Must rely on public transit (Transfort), walking, or biking
+- Starts the trip at the UH Mānoa campus
+- Must rely on public transportation (TheBus), walking, or biking
 - Has a student budget (total under $40, not including food)
-- Prefers activities within 30 minutes travel time
+- Prefers activities within 30 minutes of travel time from campus
 - Wants a mix of nature, food, and something fun
 
-Step-by-step reasoning:
+Step-by-step planning:
 1) List assumptions (weather, student lifestyle, budget).
 2) Check travel constraints (transit options, bike/walk times).
 3) Create 2–3 itinerary options.
 4) Compare pros and cons of each option.
-5) Recommend one final itinerary and provide an hour-by-hour schedule, starting and ending at CSU Main Campus.
-  </textarea>
+5) Recommend one final itinerary and provide an hour-by-hour schedule, starting and ending at the UH Mānoa campus.
 
-  <button onclick="navigator.clipboard.writeText(document.getElementById('cotPrompt').value)">
+If current transit schedules, prices, or opening hours cannot be verified, clearly identify these as estimates.</textarea>
+
+  <button onclick="copyPrompt('cotPrompt')">
     Copy CoT Prompt
   </button>
 
   <a href="index.html" class="home">← Back to activities</a>
 
   <script>
+    function copyPrompt(id) {
+      navigator.clipboard.writeText(
+        document.getElementById(id).value
+      );
+    }
+
     document.addEventListener("DOMContentLoaded", function() {
       document.querySelectorAll("textarea").forEach(function(el) {
         el.style.height = el.scrollHeight + "px";
